@@ -57,9 +57,21 @@ var getWalls = function(){
 	var wall10 = T([0,1,2])([41.2,4.8,0])(SIMPLEX_GRID([[9.8],[0.2],[4]]));
 	var wall11 = T([0,1,2])([37.3,11.3,0])(SIMPLEX_GRID([[5],[0.2],[4]]));
 
+	COLOR([0.5,0.5,0.5])(wall2);
+	COLOR([0.5,0.5,0.5])(wall3);
+	COLOR([0.5,0.5,0.5])(wall4);
+	COLOR([0.5,0.5,0.5])(wall5);
+	COLOR([0.5,0.5,0.5])(wall8);
+	COLOR([0.5,0.5,0.5])(wall9);
+	COLOR([0.5,0.5,0.5])(wall10);
+
+	COLOR([1,0.9,0.7])(wall1);
+
+	COLOR([0,0.2,0.2])(wall11);
+	COLOR([0,0.2,0.2])(wall6);
+
 	var walls = STRUCT([wall1,wall2,wall3,wall4,wall5,wall6,
 						wall8,wall9,wall10,wall11]);
-	COLOR([1,0.9,0.7])(walls);
 	DRAW(walls);
 };
 
