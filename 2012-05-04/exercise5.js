@@ -1,6 +1,9 @@
 //the Bristol M.1c placed on the airstrip
 
 var airstrip = T([0,1,2])([-5,-65,-1.55])(SIMPLEX_GRID([[10],[80],[0.2]]));
+var border1 = T([0,1,2])([-6,-65,-1.55])(SIMPLEX_GRID([[1],[80],[0.5]]));
+var border2 = T([0,1,2])([5,-65,-1.55])(SIMPLEX_GRID([[1],[80],[0.5]]));
+var borders = STRUCT([border1,border2]);
 
 var drawFuselage = function(){
 	var domain1 = INTERVALS(1)(30);
@@ -296,4 +299,5 @@ drawLeftWing();
 drawStabilizers();
 drawPropellers();
 drawLandingGear();
+DRAW(COLOR([0,0.8,0.8])(borders));
 DRAW(COLOR([1,1,1])(airstrip));
