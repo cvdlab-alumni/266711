@@ -134,7 +134,7 @@ var getUpperPart = function(){
 	var s17 = MAP(CUBIC_HERMITE(S1)([c11,cNull4,[0,0,0],[0,0,0]]))(domain2);
 	var s18 = MAP(CUBIC_HERMITE(S1)([c12,cNull4,[0,0,0],[0,0,0]]))(domain2);
 
-	var screen = COLOR([0,0,0])(STRUCT([s16,s17,s18]))
+	var screen = COLOR([0,0,0])(T([2])([-0.02])(STRUCT([s16,s17,s18])));
 	var surfacePart1 = STRUCT([s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11,s12,s13,s14,s15,screen]);
 	var surfacePart2 = R([0,1])(PI)(surfacePart1);
 	var surfacePart3 = S([0])([-1])(surfacePart1);
