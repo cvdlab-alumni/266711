@@ -1,10 +1,10 @@
 /*********************************************************
 
-***********  MacBookPro 13" model for showcase ***********
+***********  MacBook Pro 13" model for showcase **********
 
-				author: Roberto Marinai
+	author: Roberto Marinai
 
-		project stored in a local variable "scmodel"   
+	project stored in a local variable "scmodel"   
 
 *********************************************************/
 
@@ -37,14 +37,6 @@ var getLogo = function(){
 
 	var pNull = [[3,3,0]];
 	var cNull = BEZIER(S0)(pNull);
-
-	var curve = MAP(c0)(domain1);
-	var curve1 = MAP(c1)(domain1);
-	var curve2 = MAP(c2)(domain1);
-	var curve3 = MAP(c3)(domain1);
-	var curve4 = MAP(c4)(domain1);
-	var curve5 = MAP(c5)(domain1);
-	var curve6 = MAP(c6)(domain1);
 
 	var s0 = MAP(BEZIER(S1)([c0,cNull]))(domain2);
 	var s1 = MAP(BEZIER(S1)([c1,cNull]))(domain2);
@@ -148,7 +140,7 @@ var getUpperPart = function(){
 
 	};
 
-	var getFoot = function(){
+var getFoot = function(){
 
 	var domain1 = INTERVALS(1)(30);
 	var domain2 = DOMAIN([[0,1],[0,1]])([15,30]);
@@ -169,7 +161,7 @@ var getUpperPart = function(){
 	return COLOR([0,0,0])(surface);
 };
 
-	var getBottompart = function(){
+var getBottompart = function(){
 
 	var domain1 = INTERVALS(1)(30);
 	var domain2 = DOMAIN([[0,1],[0,1]])([15,30]);
@@ -547,6 +539,7 @@ var keyboard = T([0,1,2])([13.5,-7.8,0.95])(R([0,1])([PI])(getKeyboard()));
 var upperPart = T([1,2])([-15.5,10])(R([1,2])(PI/1.6)(getUpperPart()));
 var bottomPart = R([1,2])(PI)(getBottompart());
 
+/* variable containing MacBook Pro 13" model */
 var scmodel = STRUCT([bottomPart,keyboard,upperPart,touchPad,startButton,additionals]);
 
 DRAW(scmodel);
