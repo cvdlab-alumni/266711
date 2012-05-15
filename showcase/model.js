@@ -8,11 +8,7 @@
 
 *********************************************************/
 
-
-var getLogo = function(){
-
-	var domain1 = INTERVALS(1)(30);
-	var domain2 = DOMAIN([[0,1],[0,1]])([15,30]);
+var getLogo = function(domain){
 
 	var p0 = [[0,6,0],[2,8.3,0],[3,3.5,0],[4,8.3,0],[6,6,0]];
 	var c0 = BEZIER(S0)(p0);
@@ -38,22 +34,19 @@ var getLogo = function(){
 	var pNull = [[3,3,0]];
 	var cNull = BEZIER(S0)(pNull);
 
-	var s0 = MAP(BEZIER(S1)([c0,cNull]))(domain2);
-	var s1 = MAP(BEZIER(S1)([c1,cNull]))(domain2);
-	var s2 = MAP(BEZIER(S1)([c2,cNull]))(domain2);
-	var s3 = MAP(BEZIER(S1)([c3,cNull]))(domain2);
-	var s4 = MAP(BEZIER(S1)([c4,cNull]))(domain2);
-	var s5 = MAP(BEZIER(S1)([c5,c6]))(domain2);
+	var s0 = MAP(BEZIER(S1)([c0,cNull]))(domain);
+	var s1 = MAP(BEZIER(S1)([c1,cNull]))(domain);
+	var s2 = MAP(BEZIER(S1)([c2,cNull]))(domain);
+	var s3 = MAP(BEZIER(S1)([c3,cNull]))(domain);
+	var s4 = MAP(BEZIER(S1)([c4,cNull]))(domain);
+	var s5 = MAP(BEZIER(S1)([c5,c6]))(domain);
 
 	var appleLogo = T([0,1])([-3,-4])(STRUCT([s0,s1,s2,s3,s4,s5]));
 
 	return appleLogo;
 };
 
-var getUpperPart = function(){
-
-	var domain1 = INTERVALS(1)(30);
-	var domain2 = DOMAIN([[0,1],[0,1]])([15,30]);
+var getUpperPart = function(domain){
 
 	var controls1 = [[-16,9,0],[-14,11,0],[0,4,0],[4,0,0]];
 	var c1 = CUBIC_HERMITE(S0)(controls1);
@@ -102,29 +95,29 @@ var getUpperPart = function(){
 	var controlsNull4 = [[0,0,-0.21],[0,0,-0.21],[0,0,0],[0,0,0]];
 	var cNull4 = CUBIC_HERMITE(S0)(controlsNull4);
 
-	var s1 = MAP(CUBIC_HERMITE(S1)([c1,c4,[0,0,0.5],[0,0,0]]))(domain2);
-	var s2 = MAP(CUBIC_HERMITE(S1)([c2,c5,[0,0,0.5],[0,0,0]]))(domain2);
-	var s3 = MAP(CUBIC_HERMITE(S1)([c3,c6,[0,0,0.5],[0,0,0]]))(domain2);
+	var s1 = MAP(CUBIC_HERMITE(S1)([c1,c4,[0,0,0.5],[0,0,0]]))(domain);
+	var s2 = MAP(CUBIC_HERMITE(S1)([c2,c5,[0,0,0.5],[0,0,0]]))(domain);
+	var s3 = MAP(CUBIC_HERMITE(S1)([c3,c6,[0,0,0.5],[0,0,0]]))(domain);
 
-	var s4 = MAP(CUBIC_HERMITE(S1)([c1,cNull1,[0,0,0],[0,0,0]]))(domain2);
-	var s5 = MAP(CUBIC_HERMITE(S1)([c2,cNull1,[0,0,0],[0,0,0]]))(domain2);
-	var s6 = MAP(CUBIC_HERMITE(S1)([c3,cNull1,[0,0,0],[0,0,0]]))(domain2);
+	var s4 = MAP(CUBIC_HERMITE(S1)([c1,cNull1,[0,0,0],[0,0,0]]))(domain);
+	var s5 = MAP(CUBIC_HERMITE(S1)([c2,cNull1,[0,0,0],[0,0,0]]))(domain);
+	var s6 = MAP(CUBIC_HERMITE(S1)([c3,cNull1,[0,0,0],[0,0,0]]))(domain);
 
-	var s7 = MAP(CUBIC_HERMITE(S1)([c4,cNull2,[0,0,0],[0,0,0]]))(domain2);
-	var s8 = MAP(CUBIC_HERMITE(S1)([c5,cNull2,[0,0,0],[0,0,0]]))(domain2);
-	var s9 = MAP(CUBIC_HERMITE(S1)([c6,cNull2,[0,0,0],[0,0,0]]))(domain2);
+	var s7 = MAP(CUBIC_HERMITE(S1)([c4,cNull2,[0,0,0],[0,0,0]]))(domain);
+	var s8 = MAP(CUBIC_HERMITE(S1)([c5,cNull2,[0,0,0],[0,0,0]]))(domain);
+	var s9 = MAP(CUBIC_HERMITE(S1)([c6,cNull2,[0,0,0],[0,0,0]]))(domain);
 
-	var s10 = MAP(CUBIC_HERMITE(S1)([c1,c7,[0,0,0],[0,0,0]]))(domain2);
-	var s11 = MAP(CUBIC_HERMITE(S1)([c2,c8,[0,0,0],[0,0,0]]))(domain2);
-	var s12 = MAP(CUBIC_HERMITE(S1)([c3,c9,[0,0,0],[0,0,0]]))(domain2);
+	var s10 = MAP(CUBIC_HERMITE(S1)([c1,c7,[0,0,0],[0,0,0]]))(domain);
+	var s11 = MAP(CUBIC_HERMITE(S1)([c2,c8,[0,0,0],[0,0,0]]))(domain);
+	var s12 = MAP(CUBIC_HERMITE(S1)([c3,c9,[0,0,0],[0,0,0]]))(domain);
 
-	var s13 = MAP(CUBIC_HERMITE(S1)([c7,cNull3,[0,0,0],[0,0,0]]))(domain2);
-	var s14 = MAP(CUBIC_HERMITE(S1)([c8,cNull3,[0,0,0],[0,0,0]]))(domain2);
-	var s15 = MAP(CUBIC_HERMITE(S1)([c9,cNull3,[0,0,0],[0,0,0]]))(domain2);
+	var s13 = MAP(CUBIC_HERMITE(S1)([c7,cNull3,[0,0,0],[0,0,0]]))(domain);
+	var s14 = MAP(CUBIC_HERMITE(S1)([c8,cNull3,[0,0,0],[0,0,0]]))(domain);
+	var s15 = MAP(CUBIC_HERMITE(S1)([c9,cNull3,[0,0,0],[0,0,0]]))(domain);
 
-	var s16 = MAP(CUBIC_HERMITE(S1)([c10,cNull4,[0,0,0],[0,0,0]]))(domain2);
-	var s17 = MAP(CUBIC_HERMITE(S1)([c11,cNull4,[0,0,0],[0,0,0]]))(domain2);
-	var s18 = MAP(CUBIC_HERMITE(S1)([c12,cNull4,[0,0,0],[0,0,0]]))(domain2);
+	var s16 = MAP(CUBIC_HERMITE(S1)([c10,cNull4,[0,0,0],[0,0,0]]))(domain);
+	var s17 = MAP(CUBIC_HERMITE(S1)([c11,cNull4,[0,0,0],[0,0,0]]))(domain);
+	var s18 = MAP(CUBIC_HERMITE(S1)([c12,cNull4,[0,0,0],[0,0,0]]))(domain);
 
 	var screen = COLOR([0,0,0])(T([2])([-0.02])(STRUCT([s16,s17,s18])));
 	var surfacePart1 = STRUCT([s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11,s12,s13,s14,s15,screen]);
@@ -132,7 +125,7 @@ var getUpperPart = function(){
 	var surfacePart3 = S([0])([-1])(surfacePart1);
 	var surfacePart4 = S([0])([-1])(surfacePart2);
 
-	var logo = COLOR([10,10,10])(S([0,1])([0.75,0.75])(T([1,2])([1.5,0.36])(getLogo())));
+	var logo = COLOR([10,10,10])(S([0,1])([0.75,0.75])(T([1,2])([1.5,0.36])(getLogo(domain))));
 
 	var surface = STRUCT([surfacePart1,surfacePart2,surfacePart3,surfacePart4,logo]);
 
@@ -140,10 +133,7 @@ var getUpperPart = function(){
 
 	};
 
-var getFoot = function(){
-
-	var domain1 = INTERVALS(1)(30);
-	var domain2 = DOMAIN([[0,1],[0,1]])([15,30]);
+var getFoot = function(domain){
 
 	var controls1 = [[-0.8,0,0],[0,0.8,0],[0,1.4,0],[1.4,0,0]];
 	var c1 = CUBIC_HERMITE(S0)(controls1);
@@ -151,7 +141,7 @@ var getFoot = function(){
 	var controlsNull1 = [[0,0,0.1],[0,0,0.1],[0,0,0],[0,0,0]];
 	var cNull1 = CUBIC_HERMITE(S0)(controlsNull1);
 
-	var s1 = MAP(CUBIC_HERMITE(S1)([c1,cNull1,[0,0,0.5],[0,0,0]]))(domain2);
+	var s1 = MAP(CUBIC_HERMITE(S1)([c1,cNull1,[0,0,0.5],[0,0,0]]))(domain);
 	var s2 = R([0,1])(PI)(s1);
 	var s3 = S([0])([-1])(s1);
 	var s4 = S([0])([-1])(s2);
@@ -161,10 +151,7 @@ var getFoot = function(){
 	return COLOR([0,0,0])(surface);
 };
 
-var getBottompart = function(){
-
-	var domain1 = INTERVALS(1)(30);
-	var domain2 = DOMAIN([[0,1],[0,1]])([15,30]);
+var getBottompart = function(domain){
 
 	var controls1 = [[-16,9,0],[-14,11,0],[0,4,0],[4,0,0]];
 	var c1 = CUBIC_HERMITE(S0)(controls1);
@@ -219,33 +206,33 @@ var getBottompart = function(){
 	var controls31 = [[-13.5,8.5,-0.95],[-13.5,0,-0.95],[0,0,0],[0,0,0]];
 	var c31 = CUBIC_HERMITE(S0)(controls31);
 
-	var s1 = MAP(CUBIC_HERMITE(S1)([c1,c4,[0,0,0.5],[0,0,0]]))(domain2);
-	var s2 = MAP(CUBIC_HERMITE(S1)([c2,c5,[0,0,0.5],[0,0,0]]))(domain2);
-	var s3 = MAP(CUBIC_HERMITE(S1)([c3,c6,[0,0,0.5],[0,0,0]]))(domain2);
+	var s1 = MAP(CUBIC_HERMITE(S1)([c1,c4,[0,0,0.5],[0,0,0]]))(domain);
+	var s2 = MAP(CUBIC_HERMITE(S1)([c2,c5,[0,0,0.5],[0,0,0]]))(domain);
+	var s3 = MAP(CUBIC_HERMITE(S1)([c3,c6,[0,0,0.5],[0,0,0]]))(domain);
 
-	var s4 = MAP(CUBIC_HERMITE(S1)([c1,cNull1,[0,0,0],[0,0,0]]))(domain2);
-	var s5 = MAP(CUBIC_HERMITE(S1)([c2,cNull1,[0,0,0],[0,0,0]]))(domain2);
-	var s6 = MAP(CUBIC_HERMITE(S1)([c3,cNull1,[0,0,0],[0,0,0]]))(domain2);
+	var s4 = MAP(CUBIC_HERMITE(S1)([c1,cNull1,[0,0,0],[0,0,0]]))(domain);
+	var s5 = MAP(CUBIC_HERMITE(S1)([c2,cNull1,[0,0,0],[0,0,0]]))(domain);
+	var s6 = MAP(CUBIC_HERMITE(S1)([c3,cNull1,[0,0,0],[0,0,0]]))(domain);
 
-	var s7 = MAP(CUBIC_HERMITE(S1)([c4,cNull2,[0,0,0],[0,0,0]]))(domain2);
-	var s8 = MAP(CUBIC_HERMITE(S1)([c5,cNull2,[0,0,0],[0,0,0]]))(domain2);
-	var s9 = MAP(CUBIC_HERMITE(S1)([c6,cNull2,[0,0,0],[0,0,0]]))(domain2);
+	var s7 = MAP(CUBIC_HERMITE(S1)([c4,cNull2,[0,0,0],[0,0,0]]))(domain);
+	var s8 = MAP(CUBIC_HERMITE(S1)([c5,cNull2,[0,0,0],[0,0,0]]))(domain);
+	var s9 = MAP(CUBIC_HERMITE(S1)([c6,cNull2,[0,0,0],[0,0,0]]))(domain);
 
-	var s10 = MAP(CUBIC_HERMITE(S1)([c1,c7,[0,0,0],[0,0,0]]))(domain2);
-	var s11 = MAP(CUBIC_HERMITE(S1)([c2,c8,[0,0,0],[0,0,0]]))(domain2);
-	var s12 = MAP(CUBIC_HERMITE(S1)([c3,c9,[0,0,0],[0,0,0]]))(domain2);
+	var s10 = MAP(CUBIC_HERMITE(S1)([c1,c7,[0,0,0],[0,0,0]]))(domain);
+	var s11 = MAP(CUBIC_HERMITE(S1)([c2,c8,[0,0,0],[0,0,0]]))(domain);
+	var s12 = MAP(CUBIC_HERMITE(S1)([c3,c9,[0,0,0],[0,0,0]]))(domain);
 
-	var s13 = MAP(CUBIC_HERMITE(S1)([c7,c23,[0,0,0],[0,0,0]]))(domain2);
-	var s14 = MAP(CUBIC_HERMITE(S1)([c8,c24,[0,0,0],[0,0,0]]))(domain2);
-	var s15 = MAP(CUBIC_HERMITE(S1)([c9,c25,[0,0,0],[0,0,0]]))(domain2);
+	var s13 = MAP(CUBIC_HERMITE(S1)([c7,c23,[0,0,0],[0,0,0]]))(domain);
+	var s14 = MAP(CUBIC_HERMITE(S1)([c8,c24,[0,0,0],[0,0,0]]))(domain);
+	var s15 = MAP(CUBIC_HERMITE(S1)([c9,c25,[0,0,0],[0,0,0]]))(domain);
 
-	var s34 = MAP(CUBIC_HERMITE(S1)([c23,c29,[0,0,0.1],[0,0,0]]))(domain2);
-	var s35 = MAP(CUBIC_HERMITE(S1)([c24,c30,[0,0,0.1],[0,0,0]]))(domain2);
-	var s36 = MAP(CUBIC_HERMITE(S1)([c25,c31,[0,0,0.1],[0,0,0]]))(domain2);
+	var s34 = MAP(CUBIC_HERMITE(S1)([c23,c29,[0,0,0.1],[0,0,0]]))(domain);
+	var s35 = MAP(CUBIC_HERMITE(S1)([c24,c30,[0,0,0.1],[0,0,0]]))(domain);
+	var s36 = MAP(CUBIC_HERMITE(S1)([c25,c31,[0,0,0.1],[0,0,0]]))(domain);
 
-	var s40 = MAP(CUBIC_HERMITE(S1)([c29,cNull3,[0,0,0],[0,0,0]]))(domain2);
-	var s41 = MAP(CUBIC_HERMITE(S1)([c30,cNull3,[0,0,0],[0,0,0]]))(domain2);
-	var s42 = MAP(CUBIC_HERMITE(S1)([c31,cNull3,[0,0,0],[0,0,0]]))(domain2);	
+	var s40 = MAP(CUBIC_HERMITE(S1)([c29,cNull3,[0,0,0],[0,0,0]]))(domain);
+	var s41 = MAP(CUBIC_HERMITE(S1)([c30,cNull3,[0,0,0],[0,0,0]]))(domain);
+	var s42 = MAP(CUBIC_HERMITE(S1)([c31,cNull3,[0,0,0],[0,0,0]]))(domain);	
 
 
 	var controls10 = [[-16,9,0],[-14,11,0],[0,4,0],[4,0,0]];
@@ -326,41 +313,41 @@ var getBottompart = function(){
 	var c22 = CUBIC_HERMITE(S0)(controls22);
 
 
-	var s16 = MAP(CUBIC_HERMITE(S1)([c10,c13,[0,0,0.5],[0,0,0]]))(domain2);
-	var s17 = MAP(CUBIC_HERMITE(S1)([c11,c14,[0,0,0.5],[0,0,0]]))(domain2);
-	var s18 = MAP(CUBIC_HERMITE(S1)([c12,c15,[0,0,0.5],[0,0,0]]))(domain2);
+	var s16 = MAP(CUBIC_HERMITE(S1)([c10,c13,[0,0,0.5],[0,0,0]]))(domain);
+	var s17 = MAP(CUBIC_HERMITE(S1)([c11,c14,[0,0,0.5],[0,0,0]]))(domain);
+	var s18 = MAP(CUBIC_HERMITE(S1)([c12,c15,[0,0,0.5],[0,0,0]]))(domain);
 
-	var s19 = MAP(CUBIC_HERMITE(S1)([c10,cNull10,[0,0,0],[0,0,0]]))(domain2);
-	var s20 = MAP(CUBIC_HERMITE(S1)([c11,cNull10,[0,0,0],[0,0,0]]))(domain2);
-	var s20_1 = MAP(CUBIC_HERMITE(S1)([c11_1,cNull10,[0,0,0],[0,0,0]]))(domain2);
-	var s20_2 = MAP(CUBIC_HERMITE(S1)([c11_2,cNull10,[0,0,0],[0,0,0]]))(domain2);
-	var s21 = MAP(CUBIC_HERMITE(S1)([c12,cNull10,[0,0,0],[0,0,0]]))(domain2);
+	var s19 = MAP(CUBIC_HERMITE(S1)([c10,cNull10,[0,0,0],[0,0,0]]))(domain);
+	var s20 = MAP(CUBIC_HERMITE(S1)([c11,cNull10,[0,0,0],[0,0,0]]))(domain);
+	var s20_1 = MAP(CUBIC_HERMITE(S1)([c11_1,cNull10,[0,0,0],[0,0,0]]))(domain);
+	var s20_2 = MAP(CUBIC_HERMITE(S1)([c11_2,cNull10,[0,0,0],[0,0,0]]))(domain);
+	var s21 = MAP(CUBIC_HERMITE(S1)([c12,cNull10,[0,0,0],[0,0,0]]))(domain);
 
-	var s22 = MAP(CUBIC_HERMITE(S1)([c13,cNull20,[0,0,0],[0,0,0]]))(domain2);
-	var s23 = MAP(CUBIC_HERMITE(S1)([c14,cNull20,[0,0,0],[0,0,0]]))(domain2);
-	var s24 = MAP(CUBIC_HERMITE(S1)([c15,cNull20,[0,0,0],[0,0,0]]))(domain2);
+	var s22 = MAP(CUBIC_HERMITE(S1)([c13,cNull20,[0,0,0],[0,0,0]]))(domain);
+	var s23 = MAP(CUBIC_HERMITE(S1)([c14,cNull20,[0,0,0],[0,0,0]]))(domain);
+	var s24 = MAP(CUBIC_HERMITE(S1)([c15,cNull20,[0,0,0],[0,0,0]]))(domain);
 
-	var s25 = MAP(CUBIC_HERMITE(S1)([c10,c16,[0,0,0],[0,0,0]]))(domain2);
-	var s26_1 = MAP(CUBIC_HERMITE(S1)([c11_1,c17,[0,0,0],[0,0,0]]))(domain2);
-	var s26_2 = MAP(CUBIC_HERMITE(S1)([c11_2,c22,[0,0,0],[0,0,0]]))(domain2);
-	var s27 = MAP(CUBIC_HERMITE(S1)([c12,c18,[0,0,0],[0,0,0]]))(domain2);
+	var s25 = MAP(CUBIC_HERMITE(S1)([c10,c16,[0,0,0],[0,0,0]]))(domain);
+	var s26_1 = MAP(CUBIC_HERMITE(S1)([c11_1,c17,[0,0,0],[0,0,0]]))(domain);
+	var s26_2 = MAP(CUBIC_HERMITE(S1)([c11_2,c22,[0,0,0],[0,0,0]]))(domain);
+	var s27 = MAP(CUBIC_HERMITE(S1)([c12,c18,[0,0,0],[0,0,0]]))(domain);
 
-	var s28 = MAP(CUBIC_HERMITE(S1)([c16,c26,[0,0,0],[0,0,0]]))(domain2);
-	var s29 = MAP(CUBIC_HERMITE(S1)([c17,c27,[0,0,0],[0,0,0]]))(domain2);
-	var s30 = MAP(CUBIC_HERMITE(S1)([c18,c28,[0,0,0],[0,0,0]]))(domain2);
-	var s31 = MAP(CUBIC_HERMITE(S1)([c19,c20,[0,0,0],[0,0,0]]))(domain2);
-	var s32 = MAP(CUBIC_HERMITE(S1)([c21,cNull31,[0,0,0],[0,0,0]]))(domain2);
-	var s33 = MAP(CUBIC_HERMITE(S1)([c17_1,c19,[0,0,0],[0,0,0]]))(domain2);
+	var s28 = MAP(CUBIC_HERMITE(S1)([c16,c26,[0,0,0],[0,0,0]]))(domain);
+	var s29 = MAP(CUBIC_HERMITE(S1)([c17,c27,[0,0,0],[0,0,0]]))(domain);
+	var s30 = MAP(CUBIC_HERMITE(S1)([c18,c28,[0,0,0],[0,0,0]]))(domain);
+	var s31 = MAP(CUBIC_HERMITE(S1)([c19,c20,[0,0,0],[0,0,0]]))(domain);
+	var s32 = MAP(CUBIC_HERMITE(S1)([c21,cNull31,[0,0,0],[0,0,0]]))(domain);
+	var s33 = MAP(CUBIC_HERMITE(S1)([c17_1,c19,[0,0,0],[0,0,0]]))(domain);
 
-	var s37 = MAP(CUBIC_HERMITE(S1)([c26,c32,[0,0,0.1],[0,0,0]]))(domain2);
-	var s38 = MAP(CUBIC_HERMITE(S1)([c27,c33,[0,0,0.1],[0,0,0]]))(domain2);
-	var s39 = MAP(CUBIC_HERMITE(S1)([c28,c34,[0,0,0.1],[0,0,0]]))(domain2);
+	var s37 = MAP(CUBIC_HERMITE(S1)([c26,c32,[0,0,0.1],[0,0,0]]))(domain);
+	var s38 = MAP(CUBIC_HERMITE(S1)([c27,c33,[0,0,0.1],[0,0,0]]))(domain);
+	var s39 = MAP(CUBIC_HERMITE(S1)([c28,c34,[0,0,0.1],[0,0,0]]))(domain);
 
-	var s43 = MAP(CUBIC_HERMITE(S1)([c32,cNull30,[0,0,0],[0,0,0]]))(domain2);
-	var s44 = MAP(CUBIC_HERMITE(S1)([c33,cNull30,[0,0,0],[0,0,0]]))(domain2);
-	var s45 = MAP(CUBIC_HERMITE(S1)([c34,cNull30,[0,0,0],[0,0,0]]))(domain2);
+	var s43 = MAP(CUBIC_HERMITE(S1)([c32,cNull30,[0,0,0],[0,0,0]]))(domain);
+	var s44 = MAP(CUBIC_HERMITE(S1)([c33,cNull30,[0,0,0],[0,0,0]]))(domain);
+	var s45 = MAP(CUBIC_HERMITE(S1)([c34,cNull30,[0,0,0],[0,0,0]]))(domain);
 
-	var foot = T([0,1,2])([-13.5,8.5,0.36])(getFoot());
+	var foot = T([0,1,2])([-13.5,8.5,0.36])(getFoot(domain));
 	var surfacePart1 = STRUCT([s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11,s12,s13,s14,s15,s34,s35,s36,s40,s41,s42,foot]);
 	var surfacePart2 = R([0,1])(PI)(STRUCT([s16,s17,s18,s19,s20,s20_1,s20_2,s21,s22,s23,s24,s25,s26_1,s26_2,s27,s28,s29,s30,s31,s32,s33,s37,s38,s39,s43,s44,s45,foot]));
 	var surfacePart3 = S([0])([-1])(surfacePart1);
@@ -418,10 +405,7 @@ var getKeyboard = function(){
 	return keyboard;
 };
 
-var getTouchPad = function(){
-
-	var domain1 = INTERVALS(1)(30);
-	var domain2 = DOMAIN([[0,1],[0,1]])([15,30]);
+var getTouchPad = function(domain){
 
 	var controls1 = [[-5,2.75,0],[-4.5,3.25,0],[0,1,0],[1,0,0]];
 	var c1 = CUBIC_HERMITE(S0)(controls1);
@@ -435,9 +419,9 @@ var getTouchPad = function(){
 	var controlsNull1 = [[0,0,0],[0,0,0],[0,0,0],[0,0,0]];
 	var cNull1 = CUBIC_HERMITE(S0)(controlsNull1);
 
-	var s1 = MAP(CUBIC_HERMITE(S1)([c1,cNull1,[0,0,0],[0,0,0]]))(domain2);
-	var s2 = MAP(CUBIC_HERMITE(S1)([c2,cNull1,[0,0,0],[0,0,0]]))(domain2);
-	var s3 = MAP(CUBIC_HERMITE(S1)([c3,cNull1,[0,0,0],[0,0,0]]))(domain2);
+	var s1 = MAP(CUBIC_HERMITE(S1)([c1,cNull1,[0,0,0],[0,0,0]]))(domain);
+	var s2 = MAP(CUBIC_HERMITE(S1)([c2,cNull1,[0,0,0],[0,0,0]]))(domain);
+	var s3 = MAP(CUBIC_HERMITE(S1)([c3,cNull1,[0,0,0],[0,0,0]]))(domain);
 
 
 	var surfacePart1 = STRUCT([s1,s2,s3]);
@@ -450,10 +434,9 @@ var getTouchPad = function(){
 	return COLOR([0.9,0.9,0.9])(surface);
 };
 
-var getStartButton = function(){
+var getStartButton = function(domain){
 
 	var domain1 = INTERVALS(1)(30);
-	var domain2 = DOMAIN([[0,1],[0,1]])([15,30]);
 
 	var controls1 = [[-0.2,0,0],[0,-0.2,0],[0,-0.36,0],[0.36,0,0]];
 	var c1 = CUBIC_HERMITE(S0)(controls1);
@@ -482,7 +465,7 @@ var getStartButton = function(){
 	var controlsNull = [[0,0,0],[0,0,0],[0,0,0],[0,0,0]];
 	var cNull = CUBIC_HERMITE(S0)(controlsNull);
 	
-	var s10 = MAP(CUBIC_HERMITE(S1)([c10,cNull,[0,0,0],[0,0,0]]))(domain2);
+	var s10 = MAP(CUBIC_HERMITE(S1)([c10,cNull,[0,0,0],[0,0,0]]))(domain);
 	var s11 = R([0,1])(PI)(s10);
 	var s12 = S([0])([-1])(s10);
 	var s13 = S([0])([-1])(s11);
@@ -493,10 +476,7 @@ var getStartButton = function(){
 	return surface;
 };
 
-var getAdditionals = function(){
-
-	var domain1 = INTERVALS(1)(30);
-	var domain2 = DOMAIN([[0,1],[0,1]])([15,30]);
+var getAdditionals = function(domain){
 
 	var additional1Part1 = SIMPLEX_GRID([[0.015],[12.5],[0.2]]);
 	var additional1Part2 = T([1])([0.4+12.5])(SIMPLEX_GRID([[0.015],[0.7],[0.2]]));
@@ -517,7 +497,7 @@ var getAdditionals = function(){
 	var controlsNull = [[0,0,0],[0,0,0],[0,0,0],[0,0,0]];
 	var cNull = CUBIC_HERMITE(S0)(controlsNull);
 		
-	var s1 = MAP(CUBIC_HERMITE(S1)([c,cNull,[0,0,0],[0,0,0]]))(domain2);
+	var s1 = MAP(CUBIC_HERMITE(S1)([c,cNull,[0,0,0],[0,0,0]]))(domain);
 	var s2 = R([0,1])(PI)(s1);
 	var s3 = S([0])([-1])(s1);
 	var s4 = S([0])([-1])(s2);
@@ -532,12 +512,14 @@ var getAdditionals = function(){
 	return additional;
 };
 
-var additionals = T([0,1,2])([-15.99,-7.5,0.5])(R([0,2])(PI)(getAdditionals()));
-var startButton = T([0,1,2])([-14.75,-9.75,1.1])(getStartButton());
-var touchPad = T([1,2])([6.8,1.05])(getTouchPad());
+var domain = DOMAIN([[0,1],[0,1]])([15,30]);
+
+var additionals = T([0,1,2])([-15.99,-7.5,0.5])(R([0,2])(PI)(getAdditionals(domain)));
+var startButton = T([0,1,2])([-14.75,-9.75,1.1])(getStartButton(domain));
+var touchPad = T([1,2])([6.8,1.05])(getTouchPad(domain));
 var keyboard = T([0,1,2])([13.5,-7.8,0.95])(R([0,1])([PI])(getKeyboard()));
-var upperPart = T([1,2])([-15.5,10])(R([1,2])(PI/1.6)(getUpperPart()));
-var bottomPart = R([1,2])(PI)(getBottompart());
+var upperPart = T([1,2])([-15.5,10])(R([1,2])(PI/1.6)(getUpperPart(domain)));
+var bottomPart = R([1,2])(PI)(getBottompart(domain));
 
 /* variable containing MacBook Pro 13" model */
 var scmodel = STRUCT([bottomPart,keyboard,upperPart,touchPad,startButton,additionals]);
