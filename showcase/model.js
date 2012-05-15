@@ -140,7 +140,7 @@ var getUpperPart = function(){
 	var surfacePart3 = S([0])([-1])(surfacePart1);
 	var surfacePart4 = S([0])([-1])(surfacePart2);
 
-	var logo = COLOR([1,1,1])(S([0,1])([0.75,0.75])(T([1,2])([1.5,0.36])(getLogo())));
+	var logo = COLOR([10,10,10])(S([0,1])([0.75,0.75])(T([1,2])([1.5,0.36])(getLogo())));
 
 	var surface = STRUCT([surfacePart1,surfacePart2,surfacePart3,surfacePart4,logo]);
 
