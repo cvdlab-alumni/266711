@@ -515,7 +515,7 @@ var getAdditionals = function(domain){
 var domain = DOMAIN([[0,1],[0,1]])([15,30]);
 
 var additionals = T([0,1,2])([-15.99,-7.5,0.5])(R([0,2])(PI)(getAdditionals(domain)));
-var startButton = T([0,1,2])([-14.75,-9.75,1.1])(getStartButton(domain));
+var startButton = T([0,1,2])([-14.75,-9.75,1.02])(getStartButton(domain));
 var touchPad = T([1,2])([6.8,1.05])(getTouchPad(domain));
 var keyboard = T([0,1,2])([13.5,-7.8,0.95])(R([0,1])([PI])(getKeyboard()));
 var upperPart = T([1,2])([-15.5,10])(R([1,2])(PI/1.6)(getUpperPart(domain)));
