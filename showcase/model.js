@@ -512,6 +512,230 @@ var getAdditionals = function(domain){
 	return additional;
 };
 
+var getM = function(){	
+	var domain = DOMAIN([[0,1],[0,1]])([15,30]);
+	var domain1 = INTERVALS(1)(30);
+
+	var controls1 = [[0,0,0],[0.5,0,0],[0,0,0],[0,0,0]];
+	var c1 = CUBIC_HERMITE(S0)(controls1);
+	var controls1_1 = [[0.55,6,0],[1.05,6,0],[0,0,0],[0,0,0]];
+	var c1_1 = CUBIC_HERMITE(S0)(controls1_1);
+	var s1 = MAP(CUBIC_HERMITE(S1)([c1,c1_1,[0,0,0],[0,0,0]]))(domain);
+
+	var controls2 = [[0.85,6,0],[1.35,6,0],[0,0,0],[0,0,0]];
+	var c2 = CUBIC_HERMITE(S0)(controls2);
+	var controls2_1 = [[2.15,0,0],[2.6,0,0],[0,0,0],[0,0,0]];
+	var c2_1 = CUBIC_HERMITE(S0)(controls2_1);
+	var s2 = MAP(CUBIC_HERMITE(S1)([c2,c2_1,[0,0,0],[0,0,0]]))(domain);
+
+	var controls3 = [[2.4,0,0],[2.85,0,0],[0,0,0],[0,0,0]];
+	var c3 = CUBIC_HERMITE(S0)(controls3);
+	var controls3_1 = [[3.65,6,0],[4.15,6,0],[0,0,0],[0,0,0]];
+	var c3_1 = CUBIC_HERMITE(S0)(controls3_1);
+	var s3 = MAP(CUBIC_HERMITE(S1)([c3,c3_1,[0,0,0],[0,0,0]]))(domain);
+
+	var controls4 = [[3.95,6,0],[4.45,6,0],[0,0,0],[0,0,0]];
+	var c4 = CUBIC_HERMITE(S0)(controls4);
+	var controls4_1 = [[4.5,0,0],[5,0,0],[0,0,0],[0,0,0]];
+	var c4_1 = CUBIC_HERMITE(S0)(controls4_1);
+	var s4 = MAP(CUBIC_HERMITE(S1)([c4,c4_1,[0,0,0],[0,0,0]]))(domain);
+
+	var surface = S([0])([1.2])(STRUCT([s1,s2,s3,s4]));
+
+	return surface;
+};
+
+var getA = function(){
+
+	var domain = DOMAIN([[0,1],[0,1]])([15,30]);
+	var domain1 = INTERVALS(1)(30);
+
+	var controls1 = [[2.5,0,0],[2.5,3.5,0],[0,0,0],[0,0,0]];
+	var c1 = CUBIC_HERMITE(S0)(controls1);
+	var controls1_1 = [[3,0,0],[3,3.5,0],[0,0,0],[0,0,0]];
+	var c1_1 = CUBIC_HERMITE(S0)(controls1_1);
+	var s1 = MAP(CUBIC_HERMITE(S1)([c1,c1_1,[0,0,0],[0,0,0]]))(domain);
+
+	var controls2 = [[2.5,3,0],[0.25,3,0],[1.2,2.5,0],[0,-1.8,0]];
+	var c2 = CUBIC_HERMITE(S0)(controls2);
+	var controls2_1 = [[3,3.5,0],[0.25,3.5,0],[0,2.1,0],[0,-2.1,0]];
+	var c2_1 = CUBIC_HERMITE(S0)(controls2_1);
+	var s2 = MAP(CUBIC_HERMITE(S1)([c2,c2_1,[0,0,0],[0,0,0]]))(domain);
+
+	var controls3 = [[3,1,0],[0,1,0],[0.5,-2.3,0],[0,5.8,0]];
+	var c3 = CUBIC_HERMITE(S0)(controls3);
+	var controls3_1 = [[3,1.5,0],[0.5,1,0],[0.5,-2,0],[0,3.6,0]];
+	var c3_1 = CUBIC_HERMITE(S0)(controls3_1);
+	var s3 = MAP(CUBIC_HERMITE(S1)([c3,c3_1,[0,0,0],[0,0,0]]))(domain);
+
+	var controls4 = [[3,2.5,0],[0,1,0],[0,1.36,0],[0,-5.515,0]];
+	var c4 = CUBIC_HERMITE(S0)(controls4);
+	var controls4_1 = [[3,2,0],[0.5,1,0],[0,1.2,0],[0,-3.6,0]];
+	var c4_1 = CUBIC_HERMITE(S0)(controls4_1);
+	var s4 = MAP(CUBIC_HERMITE(S1)([c4,c4_1,[0,0,0],[0,0,0]]))(domain);
+
+	var surface = STRUCT([s1,s2,s3,s4]);
+
+	return surface;
+};
+
+var getC = function(){
+
+	var domain = DOMAIN([[0,1],[0,1]])([15,30]);
+	var domain1 = INTERVALS(1)(30);
+
+
+	var controls1 = [[3,0.5,0],[0,2,0],[-2,-2.5,0],[0,6,0]];
+	var c1 = CUBIC_HERMITE(S0)(controls1);
+	var controls1_1 = [[3,1,0],[0.5,2,0],[-0.8,-2,0],[0,5.75,0]];
+	var c1_1 = CUBIC_HERMITE(S0)(controls1_1);
+	var s1 = MAP(CUBIC_HERMITE(S1)([c1,c1_1,[0,0,0],[0,0,0]]))(domain);
+	var s2 = T([1])([4])(R([1,2])([PI])(s1));
+
+	var surface = STRUCT([s1,s2]);
+
+	return surface;
+};
+
+var getB = function(){
+
+	var domain = DOMAIN([[0,1],[0,1]])([15,30]);
+	var domain1 = INTERVALS(1)(30);
+
+
+	var controls1 = [[3,0,0],[0,2,0],[0,0,0],[0,6,0]];
+	var c1 = CUBIC_HERMITE(S0)(controls1);
+	var controls1_1 = [[3,0.5,0],[0.5,2,0],[0,0,0],[0,4.5,0]];
+	var c1_1 = CUBIC_HERMITE(S0)(controls1_1);
+	var s1 = MAP(CUBIC_HERMITE(S1)([c1,c1_1,[0,0,0],[0,0,0]]))(domain);
+	var s2 = T([1])([4])(R([1,2])([PI])(s1));
+
+	var part1 = STRUCT([s1,s2]);
+	var part2 = T([1])([3.5])(part1);
+	var part3 = T([0,1])([2.5,0.25])(SIMPLEX_GRID([[0.5],[6.75],[0]]));
+
+	var surface = S([1])([0.8])(T([0])([3])(R([0,2])(PI)(STRUCT([part1,part2,part3]))));
+
+	return surface;
+};
+
+var getO = function(){
+
+	var domain = DOMAIN([[0,1],[0,1]])([15,30]);
+	var domain1 = INTERVALS(1)(30);
+
+
+	var controls1 = [[1.5,0,0],[0,2,0],[0,0,0],[0,6.3,0]];
+	var c1 = CUBIC_HERMITE(S0)(controls1);
+	var controls1_1 = [[1.5,0.5,0],[0.5,2,0],[0,0,0],[0,4.7,0]];
+	var c1_1 = CUBIC_HERMITE(S0)(controls1_1);
+	var s1 = MAP(CUBIC_HERMITE(S1)([c1,c1_1,[0,0,0],[0,0,0]]))(domain);
+	var s2 = T([1])([4])(R([1,2])(PI)(s1));
+
+	var part1 = STRUCT([s1,s2]);
+	var part2 = T([0])([3])(R([0,2])(PI)(part1));
+
+	var surface = STRUCT([part1,part2]);
+
+	return surface;
+};
+
+var getK = function(){
+
+	var domain = DOMAIN([[0,1],[0,1]])([15,30]);
+	var domain1 = INTERVALS(1)(30);
+
+	var part1 = SIMPLEX_GRID([[0.5],[6],[0]]);
+
+	var controls1 = [[0.5,2.5,0],[2.5,0.25,0],[0,0,0],[0,0,0]];
+	var c1 = CUBIC_HERMITE(S0)(controls1);
+	var controls1_1 = [[0.5,3,0],[3,0.25,0],[0,0,0],[0,0,0]];
+	var c1_1 = CUBIC_HERMITE(S0)(controls1_1);
+	var s1 = MAP(CUBIC_HERMITE(S1)([c1,c1_1,[0,0,0],[0,0,0]]))(domain);
+
+	var controls2 = [[0.5,2.5,0],[3,4.25,0],[0,0,0],[0,0,0]];
+	var c2 = CUBIC_HERMITE(S0)(controls2);
+	var controls2_1 = [[0.5,3,0],[2.5,4.25,0],[0,0,0],[0,0,0]];
+	var c2_1 = CUBIC_HERMITE(S0)(controls2_1);
+	var s2 = MAP(CUBIC_HERMITE(S1)([c2,c2_1,[0,0,0],[0,0,0]]))(domain);
+
+	var surface = STRUCT([part1,s1,s2]);
+	
+	return surface;
+};
+
+var getP = function(){
+
+	var domain = DOMAIN([[0,1],[0,1]])([15,30]);
+	var domain1 = INTERVALS(1)(30);
+
+
+	var controls1 = [[3,0,0],[0,2,0],[0,0,0],[0,6,0]];
+	var c1 = CUBIC_HERMITE(S0)(controls1);
+	var controls1_1 = [[3,0.5,0],[0.5,2,0],[0,0,0],[0,4.5,0]];
+	var c1_1 = CUBIC_HERMITE(S0)(controls1_1);
+	var s1 = MAP(CUBIC_HERMITE(S1)([c1,c1_1,[0,0,0],[0,0,0]]))(domain);
+	var s2 = T([1])([4])(R([1,2])([PI])(s1));
+
+	var part1 = STRUCT([s1,s2]);
+	var part2 = T([1])([3.5])(part1);
+	var part3 = T([0])([2.5])(SIMPLEX_GRID([[0.5],[7],[0]]));
+
+	var surface = S([1])([0.8])(T([0])([3])(R([0,2])(PI)(STRUCT([part2,part3]))));
+
+	return surface;
+};
+
+var getR = function(){
+
+	var domain = DOMAIN([[0,1],[0,1]])([15,30]);
+	var domain1 = INTERVALS(1)(30);
+
+
+	var controls1 = [[1.5,0,0],[0,2,0],[0,0,0],[0,6.3,0]];
+	var c1 = CUBIC_HERMITE(S0)(controls1);
+	var controls1_1 = [[1.5,0.5,0],[0.5,2,0],[0,0,0],[0,4.7,0]];
+	var c1_1 = CUBIC_HERMITE(S0)(controls1_1);
+	var s1 = R([1,2])(PI)(MAP(CUBIC_HERMITE(S1)([c1,c1_1,[0,0,0],[0,0,0]]))(domain));
+
+	var part1 = T([1])([4])(s1);
+	var part2 = SIMPLEX_GRID([[0.5],[4],[0]]);
+
+	var surface = STRUCT([part1,part2]);
+
+	return surface;
+};
+
+var getName = function(){
+
+	var m = getM();
+	var a = getA();
+	var c = getC();
+	var b = getB();
+	var o = getO();
+	var k = getK();
+	var p = getP();
+	var r = getR();
+
+	var d = 3.3;
+
+	a = T([0])([3+d])(a);
+	c = T([0])([3+2*d])(c);
+	b = T([0])([3+3*d])(b);
+	o1 = T([0])([3+4*d])(o);
+	o2 = T([0])([3+5*d])(o);
+	k = T([0])([3+6*d])(k);
+	p = T([0])([3+7*d+1.5])(p);
+	r = T([0])([3+8*d+1.5])(r);
+	o3 = T([0])([3+8*d+1.5+1/2*d])(o);
+
+	var name = T([0])([-16.5])(STRUCT([m,a,c,b,o1,o2,k,p,r,o3]));
+	var macBookPro = R([0,1])(PI)(R([1,2])(PI-PI/1.6)(name));
+
+	return macBookPro;
+};
+
+
 var domain = DOMAIN([[0,1],[0,1]])([15,30]);
 
 var additionals = T([0,1,2])([-15.99,-7.5,0.5])(R([0,2])(PI)(getAdditionals(domain)));
@@ -520,11 +744,10 @@ var touchPad = T([1,2])([6.8,1.05])(getTouchPad(domain));
 var keyboard = T([0,1,2])([13.5,-7.8,0.95])(R([0,1])([PI])(getKeyboard()));
 var upperPart = T([1,2])([-15.5,10])(R([1,2])(PI/1.6)(getUpperPart(domain)));
 var bottomPart = R([1,2])(PI)(getBottompart(domain));
+var macName = T([1,2])([-11.6,1.25])(S([0,1,2])([0.15,0.15,0.15])(getName()));
 
 /* variable containing MacBook Pro 13" model */
-var scmodel = STRUCT([bottomPart,keyboard,upperPart,touchPad,startButton,additionals]);
-
-DRAW(scmodel);
+var scmodel = STRUCT([bottomPart,keyboard,upperPart,touchPad,startButton,additionals,macName]);
 
 
 
